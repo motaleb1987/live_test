@@ -74,6 +74,7 @@ class _LiveTest14State extends State<LiveTest14> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.teal[50],
       appBar: AppBar(
         backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
@@ -87,13 +88,14 @@ class _LiveTest14State extends State<LiveTest14> {
             margin: EdgeInsets.all(10),
             child: ListTile(
               leading: CircleAvatar(
-                child: Text(item['id'].toString()),
+                child: Text(item['id'].toString(), style: TextStyle( fontWeight: FontWeight.bold, fontSize: 20)),
               ),
-              title: Text(item['title'], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+              title: Text(item['title'], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.red),),
               subtitle: Text(
-                  "Description: ${item['description']} •\n Calories: ${item['calories']}",
+                  "Description: ${item['description']} ",
                 style: TextStyle(fontSize: 20),
               ),
+              trailing: Text('${item['calories']} Cal',style: TextStyle( fontWeight: FontWeight.bold, fontSize: 16)),
 
             ),
           );
